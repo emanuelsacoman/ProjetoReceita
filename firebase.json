@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "receitascapivara",
+    "public": "dist/receitas",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
