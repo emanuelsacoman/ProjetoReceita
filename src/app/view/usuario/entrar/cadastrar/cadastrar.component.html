@@ -1,0 +1,30 @@
+<body>
+    <section class="container">
+        <div class="left">
+            <img src="" alt="Ilustração">
+        </div>
+        <div class="right">
+            <div class="formArea">
+                <form (ngSubmit)="submit()" [formGroup]="registerForm" #formDir="ngForm" class="formTrue">
+                    <h1 class="titulo">CRIAR CONTA</h1>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" id="email" class="item" placeholder="Insira seu e-mail" formControlName="email" required />
+                    </div>
+                    <p *ngIf="isInvalidControl('email')">Erro no e-mail</p>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" id="senha" class="item" placeholder="Insira sua senha" formControlName="senha" required />
+                    </div>
+                    <p *ngIf="isInvalidControl('senha')">Erro na senha</p>
+                    <br>
+                    <div *ngIf="registerError" class="alert alert-danger">{{ registerError }}</div>
+                    <button class="sendButton" type="submit" (click)="submit()">Enviar</button>
+                </form>
+                <p class="noaccount">
+                    Já tem uma conta? <a href="#">Acesse</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>

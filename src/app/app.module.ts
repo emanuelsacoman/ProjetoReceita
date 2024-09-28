@@ -13,10 +13,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { LoginComponent } from './view/usuario/entrar/login/login.component';
+import { CadastrarComponent } from './view/usuario/entrar/cadastrar/cadastrar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
     ReactiveFormsModule,
     AngularFireAuthModule,
     provideAuth(() => getAuth()),
+    BrowserAnimationsModule,
   ],
   providers: [Title,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
