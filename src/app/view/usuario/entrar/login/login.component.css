@@ -29,12 +29,107 @@ section.container {
         flex: 2;
 
         .formArea{
-            background-color: #cc7e7e;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100%;
+            gap: 1vh;
+
+            .titulo{
+                font-size: clamp(20px, 3vw, 50px);
+            }
+
+            .provedores{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+
+                .connextionbox {
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 2px solid black;
+                    width: 150px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    background-size: cover; 
+                    background-position: center; 
+                    -webkit-background-clip: text; 
+                    background-clip: text;
+                    color: transparent; 
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all 0.1s ease-in;
+                }   
+                
+                .connextionbox:hover{
+                    filter: brightness(1.5);
+                }
+            }
+
+            .formTrue {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                .form-group input{
+                    width: 100%;
+                    height: clamp(28px, 3vw, 44px);
+                }
+
+                .send{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    font-size: clamp(12px, 2vw, 18px);
+
+                    .sendButton{
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 2px solid black;
+                        background-color: black;
+                        color: white;
+                        transition: all 0.1s ease-in;
+                        font-size: clamp(14px, 2vw, 26px);                        
+                    }
+
+                    .sendButton:hover{
+                        background-color: rgb(44, 44, 44);
+                    }
+
+                    .noaccount{
+
+                        .link{
+                            color: chocolate;
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .provedores{
+        flex-direction: column;
+        gap: 1vh;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .send{
+        flex-direction: column;
+        gap: 1vh;
     }
 }

@@ -5,8 +5,13 @@
         </div>
         <div class="left">
             <div class="formArea">
+                <h1 class="titulo">CONECTE-SE</h1>
+                <div class="provedores">
+                    <div class="connextionbox" style="background-image: url('/assets/images/gmail.jpg');">GMAIL</div>
+                    <div class="connextionbox" style="background-image: url('/assets/images/facebook.jpg');">FACEBOOK</div>
+                </div>              
+                <p>ou</p>
                 <form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir="ngForm" class="formTrue">
-                    <h1 class="titulo">CONECTE-SE</h1>
                     <br>
                     <div class="form-group">
                         <input type="email" id="email" class="item" placeholder="Insira seu e-mail" formControlName="email" required />
@@ -19,11 +24,13 @@
                     <p *ngIf="isInvalidControl('senha')">Erro na senha</p>
                     <br>
                     <div *ngIf="loginError" class="alert alert-danger">{{ loginError }}</div>
-                    <button class="sendButton" type="submit" (click)="submit()">Enviar</button>
+                    <div class="send">
+                        <button class="sendButton" type="submit" (click)="submit()">ENTRAR</button>
+                        <p class="noaccount">
+                            ESQUECEU A SENHA? <a href="#" class="link">ACESSE</a>
+                        </p>
+                    </div>
                 </form>
-                <p class="noaccount">
-                    Esqueceu a senha? <a href="#">Acesse</a>
-                </p>
             </div>
         </div>
     </section>
