@@ -86,6 +86,10 @@ section.container {
                     height: clamp(28px, 3vw, 44px);
                 }
 
+                .alert{
+                    color: red;
+                }
+
                 .send{
                     display: flex;
                     flex-direction: row;
