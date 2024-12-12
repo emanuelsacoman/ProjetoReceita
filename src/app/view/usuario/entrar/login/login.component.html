@@ -16,12 +16,12 @@
                     <div class="form-group">
                         <input type="email" id="email" class="item" placeholder="Insira seu e-mail" formControlName="email" required />
                     </div>
-                    <p *ngIf="isInvalidControl('email')">Erro no e-mail</p>
+                    <p class="alert" *ngIf="isInvalidControl('email')">Erro no e-mail</p>
                     <br>
                     <div class="form-group">
                         <input type="password" id="senha" class="item" placeholder="Insira sua senha" formControlName="senha" required />
                     </div>
-                    <p *ngIf="isInvalidControl('senha')">Erro na senha</p>
+                    <p class="alert" *ngIf="isInvalidControl('senha')">Erro na senha</p>
                     <br>
                     <div *ngIf="loginError" class="alert alert-danger">{{ loginError }}</div>
                     <div class="send">

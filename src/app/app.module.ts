@@ -16,6 +16,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { LoginComponent } from './view/usuario/entrar/login/login.component';
 import { CadastrarComponent } from './view/usuario/entrar/cadastrar/cadastrar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireAuthModule,
     provideAuth(() => getAuth()),
     BrowserAnimationsModule,
+    NgToastModule
   ],
   providers: [Title,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
