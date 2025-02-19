@@ -1,29 +1,41 @@
 <body>
     <section class="container">
-        <div class="left">
+        <div class="right">
             <img src="" alt="Ilustração">
         </div>
-        <div class="right">
+        <div class="left">
             <div class="formArea">
+                <h1 class="titulo">Entre com:</h1>
+                <div class="provedores">
+                    <div class="connextionbox" style="background-image: url('/assets/images/gmail.jpg');">GMAIL</div>
+                    <div class="connextionbox" style="background-image: url('/assets/images/facebook.jpg');">FACEBOOK</div>
+                </div>              
+                <p class="ou">ou</p>
                 <form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir="ngForm" class="formTrue">
-                    <h1 class="titulo">CONECTE-SE</h1>
                     <br>
                     <div class="form-group">
+                        <p class="textoInformativoEmaileSenha"> E-mail: </p>
                         <input type="email" id="email" class="item" placeholder="Insira seu e-mail" formControlName="email" required />
                     </div>
-                    <p *ngIf="isInvalidControl('email')">Erro no e-mail</p>
+                    <p class="alert" *ngIf="isInvalidControl('email')">Digite o E-mail Corretamente</p>
                     <br>
                     <div class="form-group">
+                        <p class="textoInformativoEmaileSenha"> Senha: </p>
                         <input type="password" id="senha" class="item" placeholder="Insira sua senha" formControlName="senha" required />
                     </div>
-                    <p *ngIf="isInvalidControl('senha')">Erro na senha</p>
+                    <p class="alert" *ngIf="isInvalidControl('senha')">Senha incorreta</p>
                     <br>
+                    <div class="alert-danger-Pai">
                     <div *ngIf="loginError" class="alert alert-danger">{{ loginError }}</div>
-                    <button class="sendButton" type="submit" (click)="submit()">Enviar</button>
+                    
+                    <div class="send">
+                        <button class="sendButton" type="submit" (click)="submit()">ENTRAR</button>
+                        <p class="noaccount">
+                            Esqueceu a senha? <a href="#" class="link">Clique aqui </a>
+                        </p>
+                    </div>
+                </div>
                 </form>
-                <p class="noaccount">
-                    Esqueceu a senha? <a href="#">Acesse</a>
-                </p>
             </div>
         </div>
     </section>

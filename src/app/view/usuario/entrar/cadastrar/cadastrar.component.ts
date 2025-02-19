@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/model/services/auth.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class CadastrarComponent {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private titleService: Title,
-    private metaService: Meta){
+    private metaService: Meta,
+    private toast: NgToastService){
       this.setDocTitle(this.title)
       this.setMetaDescription(this.description);
   }
